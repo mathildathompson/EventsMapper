@@ -12,7 +12,7 @@ class HomeController < ApplicationController
         # binding.pry
         if ipcity == ""
         latlng = Geocoder.coordinates("#{searchterm}, London")
-        binding.pry
+        # binding.pry
         else
         latlng = Geocoder.coordinates("#{searchterm}, #{ipcity}")
         end
@@ -21,7 +21,7 @@ class HomeController < ApplicationController
 
         latitude = latlng[0]
         longitude = latlng[1]
-        binding.pry
+        # binding.pry
 
         @yogas << Yoga.get_event("yoga",latitude,longitude)
         # binding.pry

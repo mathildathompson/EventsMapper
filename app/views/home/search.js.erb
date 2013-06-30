@@ -7,4 +7,12 @@ $('#yogalist').append('<%= j(render 'yoga', :yoga => yoga) %>');
 <%#binding.pry%>
 <% end %>
 
+<% @yogas.each do |item| %>
+<%#binding.pry%>
+    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name%>');
+<%#binding.pry%>
+ <% end %>
+ // zoomin(latlng);
+ // latlng = [];
+
 
