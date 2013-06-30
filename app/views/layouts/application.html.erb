@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EventsMapper</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <!-- <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> -->
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC74gnSe7p17ulcZUzgPJHxYurGg2bjRYg&sensor=false">
+  </script>
+ 
+</head>
+
+<body>
+   <!--  <input type="text" id="autocomplete"> -->
+    <div id="map-canvas"></div>
+
+    <%= yield %>
+
+</body>
+</html>

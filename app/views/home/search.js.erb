@@ -1,0 +1,10 @@
+$('#yogalist').html('');
+
+<% @yogas.each do |yoga| %>
+<%#binding.pry%>
+
+$('#yogalist').append('<%= j(render 'yoga', :yoga => yoga) %>');
+<%#binding.pry%>
+<% end %>
+
+
