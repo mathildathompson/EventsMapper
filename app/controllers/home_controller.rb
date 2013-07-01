@@ -26,9 +26,9 @@ class HomeController < ApplicationController
         # binding.pry
 
         @yogas << Yoga.get_event("yoga",latitude,longitude)
-        binding.pry
+        # binding.pry
         @yogas.flatten!
-        binding.pry
+        # binding.pry
         render :template => 'home/search', :content_type => 'text/javascript'
     end
 end

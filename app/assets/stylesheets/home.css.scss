@@ -16,6 +16,10 @@
 //     margin: 0;
 //     padding: 0;
 // }
+*{
+    font-family: Papyrus, fantasy;
+}
+
   #map-canvas { 
     height: 100%;
     width:100%;
@@ -24,5 +28,23 @@
  #googlemap{
     height:370px;
     width:600px;
+    margin-left:50px;
+    margin-top:20px;
+    float:left;
+ }
+
+ #yogalist{
+    width:550px;
+    float:left;
+    margin:30px;
+    font-family: Papyrus, fantasy;
+ }
+
+ .yogaevents{
+    margin-left:800px;
+    margin-top:20px;
+    h3{
+        font-family: Papyrus, fantasy;
+    }
  }
  

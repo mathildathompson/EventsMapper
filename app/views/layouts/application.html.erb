@@ -41,12 +41,19 @@
 
 <body>
    <!--  <input type="text" id="autocomplete"> -->
-   <div id='googlemap'>
+
+
+    <%= yield %>
+
+  <div id='googlemap'>
     <div id="map-canvas">
     </div>
   </div>
-
-    <%= yield %>
+  <div class='yogaevents'>
+     <h3>Yoga Events In Your Area</h3>
+  </div>
+  <div id="yogalist">
+  </div>
 
 </body>
 </html>
