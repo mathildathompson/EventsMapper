@@ -7,6 +7,8 @@ class HomeController < ApplicationController
 
     def create
         searchterm = params[:searchterm]
+        # latlng = Yoga.my_cool_geocoding_method(searchterm)
+        # binding.pry
         result = request.location
         ipcity = result.data["city"]
         # binding.pry
@@ -24,9 +26,9 @@ class HomeController < ApplicationController
         # binding.pry
 
         @yogas << Yoga.get_event("yoga",latitude,longitude)
-        # binding.pry
+        binding.pry
         @yogas.flatten!
-        # binding.pry
+        binding.pry
         render :template => 'home/search', :content_type => 'text/javascript'
     end
 end

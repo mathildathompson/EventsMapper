@@ -1,14 +1,40 @@
+
+
+
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
+
+  <meta charset="utf-8" />
+
+    <!-- Uncomment to make IE8 render like IE7 -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EventsMapper</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "vendor/custom.modernizr" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
   <!-- <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> -->
   <script type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC74gnSe7p17ulcZUzgPJHxYurGg2bjRYg&sensor=false">
+  </script>
+
+  <script type="text/javascript">
+
+      $(function() {
+      initMap();
+
+      //add here var items that converts ToDoItems to JSON, take out the var to make to global
+
+      // <% Yoga.all.each do |item| %>
+
+      // addMarker(<%=item.latitude%>, <%=item.longitude%>, '<%=item.name%>');
+      // <%end%>
+     });
   </script>
  
 </head>
@@ -24,3 +50,4 @@
 
 </body>
 </html>
+
