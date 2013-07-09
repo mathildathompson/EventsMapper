@@ -5,7 +5,10 @@ $(document).ready(function(){
         $.ajax({
           url: "/home",
           type: 'POST',
-          data: {searchterm: searchterm}
+          data: {searchterm: searchterm},
+          success: function(){
+            stroll.bind($('#yogalist'));
+          }
     });
 });
 });

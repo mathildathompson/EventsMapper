@@ -1,17 +1,20 @@
 deleteOverlays();
 $('#yogalist').html('');
 
-<% @yogas.each do |yoga| %>
-<%#binding.pry%>
+<% @yogas.each_with_index do |yoga, i| %>
 
-$('#yogalist').append('<%= j(render 'yoga', :yoga => yoga) %>');
-<%#binding.pry%>
-<% end %>
+    <%if i < 10%>
+    <%#binding.pry%>
 
-<%@yogas.each do |item| %>
-<%#binding.pry%>
-    addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name%>');
-<%#binding.pry%>
+    $('#yogalist').append('<%= j(render 'yoga', :yoga => yoga) %>');
+    <%#binding.pry%>
+    <% end %>
+
+    <%@yogas.each do |item| %>
+    <%#binding.pry%>
+        addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name%>');
+    <%#binding.pry%>
+     <% end %>
  <% end %>
 
 

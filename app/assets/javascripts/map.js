@@ -25,14 +25,14 @@ var markers = [];
         title: title
       }
 
-  // var markerBounds = new google.maps.LatLngBounds();
-  // markerBounds.extend(markerLatlng);
-  // map.fitBounds(markerBounds);
+  var markerBounds = new google.maps.LatLngBounds();
+  markerBounds.extend(markerLatlng);
+  map.fitBounds(markerBounds);
 
-  // var listener = google.maps.event.addListener(map, "idle", function() { 
-  // if (map.getZoom() > 15) map.setZoom(15); 
-  // google.maps.event.removeListener(listener); 
-  // });
+  var listener = google.maps.event.addListener(map, "idle", function() { 
+  if (map.getZoom() > 12) map.setZoom(12); 
+  google.maps.event.removeListener(listener); 
+  });
 
   var marker = new google.maps.Marker(markerSettings);
   markers.push(marker);
