@@ -1,3 +1,4 @@
+deleteOverlays();
 $('#yogalist').html('');
 
 <% @yogas.each do |yoga| %>
@@ -12,7 +13,6 @@ $('#yogalist').append('<%= j(render 'yoga', :yoga => yoga) %>');
     addMarker(<%= item.latitude %>,<%= item.longitude %>,'<%= item.name%>');
 <%#binding.pry%>
  <% end %>
- // zoomin(latlng);
- // latlng = [];
+
 
 

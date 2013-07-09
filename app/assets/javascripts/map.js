@@ -1,10 +1,11 @@
  
 var map; 
+var markers = [];
 
   function initMap() {
     var mapOptions = {
       center: new google.maps.LatLng(51.5099983215332, -0.12999999523162842),
-      zoom: 8,
+      zoom: 12,
       mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
@@ -13,13 +14,67 @@ var map;
 
 }
 
+ var latlng = [];
+
+
  function addMarker(latitude, longitude, title) {
-        var marker = new google.maps.Marker({
-          position:new google.maps.LatLng(latitude, longitude), 
-          map : map, 
-          title : title
-        });
+        var markerLatlng = new google.maps.LatLng(latitude, longitude);
+        var markerSettings={
+        position: markerLatlng,
+        map: map,   
+        title: title
       }
+
+  // var markerBounds = new google.maps.LatLngBounds();
+  // markerBounds.extend(markerLatlng);
+  // map.fitBounds(markerBounds);
+
+  // var listener = google.maps.event.addListener(map, "idle", function() { 
+  // if (map.getZoom() > 15) map.setZoom(15); 
+  // google.maps.event.removeListener(listener); 
+  // });
+
+  var marker = new google.maps.Marker(markerSettings);
+  markers.push(marker);
+  latlng.push(markerLatlng);
+
+}
+
+// function setAllMap(map) {
+//   for (var i = 0; i < markers.length; i++) {
+//     markers[i].setMap(map);
+//     // map.fitBounds(getBoundsForLatLng(latLng));
+//   }
+// }
+
+function zoomin(latlng){
+var latlngbounds = new google.maps.LatLngBounds();
+for (var i = 0; i < latlng.length; i++) {
+  latlngbounds.extend(latlng[i]);
+}
+map.fitBounds(latlngbounds);
+};
+// Sets the map on all markers in the array.
+function setAllMap(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+function clearOverlays() {
+  setAllMap(null);
+}
+
+// Shows any overlays currently in the array.
+function showOverlays() {
+  setAllMap(map);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteOverlays() {
+  clearOverlays();
+  markers = [];
+}
 
 
 

@@ -7,17 +7,15 @@ class HomeController < ApplicationController
 
     def create
         searchterm = params[:searchterm]
+        # binding.pry
         # latlng = Yoga.my_cool_geocoding_method(searchterm)
         # binding.pry
-        result = request.location
-        ipcity = result.data["city"]
+        # result = request.location
+        # ipcity = result.data["city"]
         # binding.pry
-        if ipcity == ""
-        latlng = Geocoder.coordinates("#{searchterm}, London")
+        latlng = Geocoder.coordinates("#{searchterm}")
         # binding.pry
-        else
-        latlng = Geocoder.coordinates("#{searchterm}, #{ipcity}")
-        end
+        # end
 
         @yogas = []
 

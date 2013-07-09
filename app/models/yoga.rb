@@ -11,7 +11,7 @@ class Yoga < ActiveRecord::Base
     # binding.pry
     RMeetup::Client.api_key = "63657a6163574978643a285d2a65762d"
     # binding.pry
-    @results = RMeetup::Client.fetch(:events, {:topic => "#{topic}", :lat =>latitude, :lon =>longitude, :radius => 0.5})
+    @results = RMeetup::Client.fetch(:events, {:topic => "#{topic}", :lat =>latitude, :lon =>longitude, :radius => 1})
     # binding.pry
     @results.each do |result|
       # binding.pry
