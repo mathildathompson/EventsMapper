@@ -2,31 +2,30 @@
 var map; 
 var markers = [];
 
-  function initMap() {
-    var mapOptions = {
+function initMap() {
+  var mapOptions = {
       center: new google.maps.LatLng(51.5099983215332, -0.12999999523162842),
       zoom: 12,
       mapTypeId:google.maps.MapTypeId.ROADMAP,
   };
 
-   map = new google.maps.Map(document.getElementById("map-canvas"),
+  map = new google.maps.Map(document.getElementById("map-canvas"),
     mapOptions);
-
 }
 
- var latlng = [];
+var latlng = [];
 
- var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
- function addMarker(latitude, longitude, title) {
+var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+function addMarker(latitude, longitude, title) {
   var markerLatlng = new google.maps.LatLng(latitude, longitude);
   var markerSettings={
     position: markerLatlng,
     map: map,   
     title: title,
     draggable:true,
-    optimized:false,
-    icon: iconBase + 'info-i_maps.png',
-    shadow: iconBase + 'info-i_maps.shadow.png'
+    optimized:false
+    // icon: iconBase + 'info-i_maps.png',
+    // shadow: iconBase + 'info-i_maps.shadow.png'
   };
   //icon:/assets/images, you can do it in the marker settings
   var markerBounds = new google.maps.LatLngBounds();
@@ -43,7 +42,17 @@ var markers = [];
   markers.push(marker);
   latlng.push(markerLatlng);
 
-}
+  var infoWindowOptions = {
+     content: title
+  };
+
+  var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
+
+  google.maps.event.addListener(marker, 'click', function(e){
+   infoWindow.open(map, marker);
+  });
+
+};
 
 // function setAllMap(map) {
 //   for (var i = 0; i < markers.length; i++) {
@@ -80,6 +89,8 @@ function deleteOverlays() {
   clearOverlays();
   markers = [];
 }
+
+
 
 
 
