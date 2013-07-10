@@ -6,7 +6,7 @@ var markers = [];
     var mapOptions = {
       center: new google.maps.LatLng(51.5099983215332, -0.12999999523162842),
       zoom: 12,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId:google.maps.MapTypeId.ROADMAP,
   };
 
    map = new google.maps.Map(document.getElementById("map-canvas"),
@@ -18,13 +18,15 @@ var markers = [];
 
 
  function addMarker(latitude, longitude, title) {
-        var markerLatlng = new google.maps.LatLng(latitude, longitude);
-        var markerSettings={
-        position: markerLatlng,
-        map: map,   
-        title: title
-      }
-
+  var markerLatlng = new google.maps.LatLng(latitude, longitude);
+  var markerSettings={
+    position: markerLatlng,
+    map: map,   
+    title: title,
+    draggable:true,
+    optimized:false
+    };
+  //icon:/assets/images, you can do it in the marker settings
   var markerBounds = new google.maps.LatLngBounds();
   markerBounds.extend(markerLatlng);
   map.fitBounds(markerBounds);
@@ -35,6 +37,7 @@ var markers = [];
   });
 
   var marker = new google.maps.Marker(markerSettings);
+  // marker.setIcon({/assets/images});
   markers.push(marker);
   latlng.push(markerLatlng);
 

@@ -20,35 +20,53 @@
     font-family: Papyrus, fantasy;
 }
 
-  #map-canvas { 
-    height: 100%;
-    width:100%;
- }
+#areasearch{
+   width:600px;
+   margin-left: 50px;
+   border-radius: 10px;
+   box-shadow: 2px 1px 5px #888;
+   float:left;
+}
 
- #googlemap{
+#map-canvas{ 
+    height:100%;
+    width:100%;
+    img{
+        max-width:none;
+    }
+}
+
+#googlemap{
     height:370px;
     width:600px;
     margin-left:50px;
     margin-top:20px;
     float:left;
- }
+}
 
- #yogalist{
+#yogalist{
     width:550px;
     float:left;
     margin:30px;
     font-family: Papyrus, fantasy;
- }
+    background-color: white;
+    height: 370px;
+    background:lightgrey;
+    // border: 2px solid black;
+    padding: 15px;
+    margin-top:18px;
+    // box-shadow: inset 10px 10px 10px #888;
+}
 
- .yogaevents{
+.yogaevents{
     margin-left:800px;
     margin-top:20px;
     h3{
         font-family: Papyrus, fantasy;
     }
- }
+}
 
- ul {
+ul {
     position: relative;
     width: 230px; 
     height: 480px;
@@ -59,9 +77,37 @@
     list-style: none;
 
     -webkit-perspective: 400px;
-       -moz-perspective: 400px;
-        -ms-perspective: 400px;
-         -o-perspective: 400px;
-            perspective: 400px;
+    -moz-perspective: 400px;
+    -ms-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
 }
- 
+
+nav{
+   width: 1200px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 10px;
+   border-radius: 10px;
+   box-shadow: 2px 1px 5px #888;
+}
+
+.top-bar h1 a{
+   font-size:20px;
+   color:white;
+   float:left;
+   margin-left:20px;
+}
+
+.yoga_icon{
+    margin-top: -15px;
+    border-radius: 15px;
+    float: right;
+    margin-right: 15px;
+    // opacity:0.1px;
+    // transition:opacity .2s ease-in-out;
+}
+
+.yoga_icon:hover{
+    // opacity:.9px;
+}
