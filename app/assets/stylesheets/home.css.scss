@@ -60,7 +60,7 @@
     margin-top:18px;
     box-shadow: 5px 5px 10px #888;
     border-radius:10px;
-    opacity:0.5;
+    opacity:0.7;
     transition:opacity .2s ease-in-out;
     // box-shadow: inset 10px 10px 10px #888;
 }
@@ -74,6 +74,7 @@
     margin-top:20px;
     h3{
         font-family: Papyrus, fantasy;
+        text-shadow:1px 1px 1px #888;
     }
 }
 
@@ -115,10 +116,10 @@ nav{
     border-radius: 15px;
     float: right;
     margin-right: 15px;
-    // opacity:0.1px;
-    // transition:opacity .2s ease-in-out;
+    opacity:1;
+    transition:opacity .2s ease-in-out;
 }
 
 .yoga_icon:hover{
-    // opacity:.9px;
+     opacity:.6;
 }
