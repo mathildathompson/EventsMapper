@@ -3,54 +3,49 @@
 
 <!DOCTYPE html>
 <html lang='en'>
-<head>
+  <head>
 
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 
-    <!-- Uncomment to make IE8 render like IE7 -->
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+      <!-- Uncomment to make IE8 render like IE7 -->
+      <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-    <!-- Set the viewport width to device width for mobile -->
+      <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EventsMapper</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "vendor/custom.modernizr" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+    <title>EventsMapper</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 
 
-  <!-- <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> -->
-  <script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC74gnSe7p17ulcZUzgPJHxYurGg2bjRYg&sensor=false">
-  </script>
+    <!-- <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> -->
+    <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC74gnSe7p17ulcZUzgPJHxYurGg2bjRYg&sensor=false">
+    </script>
 
-  <script type="text/javascript">
-
+    <script type="text/javascript">
       $(function() {
-      initMap();
+        initMap();
+      });
+    </script>
+   
+  </head>
 
-     
-     });
-  </script>
- 
-</head>
-
-<body>
-   <!--  <input type="text" id="autocomplete"> -->
-
-
+  <body>
+     <!--  <input type="text" id="autocomplete"> -->
     <%= yield %>
 
-  <div id='googlemap'>
-    <div id="map-canvas">
+    <div id='googlemap'>
+      <div id="map-canvas">
+      </div>
     </div>
-  </div>
 
-  <div class='yogas'>
-    <ul id="yogalist">
-    </ul>
-  </div>
+    <div class='yogas'>
+      <ul id="yogalist">
+      </ul>
+    </div>
 
-</body>
+  </body>
 </html>
 

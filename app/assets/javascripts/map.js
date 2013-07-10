@@ -16,7 +16,7 @@ var markers = [];
 
  var latlng = [];
 
-
+ var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
  function addMarker(latitude, longitude, title) {
   var markerLatlng = new google.maps.LatLng(latitude, longitude);
   var markerSettings={
@@ -24,8 +24,10 @@ var markers = [];
     map: map,   
     title: title,
     draggable:true,
-    optimized:false
-    };
+    optimized:false,
+    icon: iconBase + 'info-i_maps.png',
+    shadow: iconBase + 'info-i_maps.shadow.png'
+  };
   //icon:/assets/images, you can do it in the marker settings
   var markerBounds = new google.maps.LatLngBounds();
   markerBounds.extend(markerLatlng);

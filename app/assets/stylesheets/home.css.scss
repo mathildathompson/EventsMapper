@@ -31,12 +31,15 @@
 #map-canvas{ 
     height:100%;
     width:100%;
+    box-shadow: 5px 5px 10px #888;
+    border-radius:10px;
     img{
         max-width:none;
     }
 }
 
 #googlemap{
+    border-radius:10px;
     height:370px;
     width:600px;
     margin-left:50px;
@@ -55,7 +58,15 @@
     // border: 2px solid black;
     padding: 15px;
     margin-top:18px;
+    box-shadow: 5px 5px 10px #888;
+    border-radius:10px;
+    opacity:0.5;
+    transition:opacity .2s ease-in-out;
     // box-shadow: inset 10px 10px 10px #888;
+}
+
+#yogalist:hover{
+  opacity:0.9;
 }
 
 .yogaevents{
